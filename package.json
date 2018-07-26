@@ -28,6 +28,7 @@
     "babylon": "^6.17.4",
     "babylon-walk": "^1.0.2",
     "browserslist": "^3.2.6",
+    "builtin-modules": "^3.0.0",
     "chalk": "^2.1.0",
     "clone": "^2.1.1",
     "command-exists": "^1.2.6",

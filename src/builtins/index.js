@@ -1,11 +1,12 @@
-var nodeBuiltins = require('node-libs-browser');
+var nodeLibsBrowser = require('node-libs-browser');
+var builtinModules = require('builtin-modules');
 
 var builtins = Object.create(null);
-for (var key in nodeBuiltins) {
-  builtins[key] = nodeBuiltins[key] == null
+builtinModules.forEach(function (name) {
+  builtins[name] = nodeLibsBrowser[name] == null
     ? require.resolve('./_empty.js')
-    : nodeBuiltins[key];
-}
+    : nodeLibsBrowser[name];
+});
 
 builtins['_bundle_loader'] = require.resolve('./bundle-loader.js');
 builtins['_css_loader'] = require.resolve('./css-loader.js');
